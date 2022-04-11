@@ -12,9 +12,15 @@ import java.lang.String;
  */
 public class Deeds {
     String Name; String Owner;
+    private int Id;
     int CostOfDeed, Mortgage, Rent;
     boolean Own;
-
+    public int GetId(){
+        return Id;
+    }
+    public void SetId(int value){
+        Id = value;
+    }
     Deeds (String name, int cost, int mort, int rent)
     {
         Name = name;
