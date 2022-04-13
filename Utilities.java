@@ -1,5 +1,5 @@
 
-public class Utilities extends Deeds {
+public class Utilities extends Deed {
 //*****************************************************************************
 
 

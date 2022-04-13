@@ -1,5 +1,5 @@
 
-public class Properties extends Deeds{
+public class Property extends Deed{
 //*****************************************************************************
 
     /*
@@ -15,11 +15,11 @@ public class Properties extends Deeds{
             NumHouses;
     boolean Hotel;
 
-    Properties(String name, int cost, int mort, int rent, int houseCost,
+    Property(String name, int cost, int mort, int rent, int houseCost,
                int r1, int r2, int r3, int r4, int rh, int hotelCost)
     {
         super(name, cost, mort, rent);
-        Rent0 = Rent; Rent1 = r1; Rent2 = r2; Rent3 = r3;Rent4 = r4;RentH = rh;
+        Rent0 = GetRent(); Rent1 = r1; Rent2 = r2; Rent3 = r3;Rent4 = r4;RentH = rh;
         NumHouses = 0;
         CostOfHouse = houseCost;
         hotelCost = CostOfHotel;

@@ -1,4 +1,7 @@
 import java.lang.String;
+import java.util.jar.Attributes.Name;
+
+import javax.management.ValueExp;
 
 //*****************************************************************************
 
@@ -10,23 +13,54 @@ import java.lang.String;
  * Rent = base rent
  * Own = is the property owned by a player
  */
-public class Deeds {
-    String Name; String Owner;
+public class Deed {
+    private String Name;
+    private String Owner;
+    private int OwnerId;
     private int Id;
-    int CostOfDeed, Mortgage, Rent;
-    boolean Own;
+    private int CostOfDeed, Mortgage, Rent;
+    private boolean Own;
+    public String GetName(){
+        return Name;
+    }
+    public void SetName(String value){
+        Name = value;
+    }
+    public int GetOwnerId(){
+        return OwnerId;
+    }
+    public void SetOwnerId(int value){
+        OwnerId = value;
+    }
+    public int GetCostOfDeed(){
+        return CostOfDeed;
+    }
+    public int GetMortgage(){
+        return Mortgage;
+    }
+    public int GetRent(){
+        return Rent;
+    }
     public int GetId(){
         return Id;
     }
     public void SetId(int value){
         Id = value;
     }
-    Deeds (String name, int cost, int mort, int rent)
+    public Deed (String name, int cost, int mort, int rent)
     {
         Name = name;
         CostOfDeed = cost;
         Mortgage = mort;
         Rent = rent;
+        Own = false;
+        Owner = "N/A";
+    }
+    public Deed(){
+        Name = "a";
+        CostOfDeed = 0;
+        Mortgage = 0;
+        Rent = 0;
         Own = false;
         Owner = "N/A";
     }

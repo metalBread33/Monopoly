@@ -4,10 +4,10 @@ public class Test //needs to run at start of game
 {
     public static void main (String args[])
     {
-        Deeds[] deeds;
-        deeds = new Deeds [28];
+        Deed[] deeds;
+        deeds = new Deed [28];
 
-        Deeds temp;
+        Deed temp;
         // temp = new Properties ("Mediterranean Avenue", 60, 30, 2, 50, 10, 30, 90, 160, 250);
         //  deeds[0] = temp;
 

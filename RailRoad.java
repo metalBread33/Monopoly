@@ -1,8 +1,11 @@
 import java.lang.System;
-public class RailRoads extends Deeds{
+public class RailRoad extends Deed{
 
-    RailRoads(String name, int cost, int mort, int rent)
+    public RailRoad(String name, int cost, int mort, int rent)
     {
         super(name, cost, mort, rent);
+    }
+    public RailRoad(){
+        super();
     }
 }
