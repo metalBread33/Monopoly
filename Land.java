@@ -7,6 +7,6 @@ public class Land {
         deed = value;
     }
     public Land(){
-        deed = null;
+        deed = new Deed();
     }
 }

@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Start",
+            "request": "launch",
+            "mainClass": "Start",
+            "projectName": "Monopoly_8a554619"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "Monopoly_8a554619"
+        },
+        {
+            "type": "java",
+            "name": "Launch Product",
+            "request": "launch",
+            "mainClass": "graphic_test.Product",
+            "projectName": "Monopoly_8a554619"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShowColors",
+            "request": "launch",
+            "mainClass": "graphic_test.ShowColors",
+            "projectName": "Monopoly_8a554619"
+        },
+        {
+            "type": "java",
+            "name": "Launch HelloWorldSwing",
+            "request": "launch",
+            "mainClass": "graphic_test.start.HelloWorldSwing",
+            "projectName": "Monopoly_8a554619"
+        }
+    ]
+}

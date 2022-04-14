@@ -20,6 +20,8 @@ public class Deed {
     private int Id;
     private int CostOfDeed, Mortgage, Rent;
     private boolean Own;
+    private boolean IsVisitingJail = false;
+    private boolean IsJail = false;
     public String GetName(){
         return Name;
     }
@@ -55,6 +57,11 @@ public class Deed {
         Rent = rent;
         Own = false;
         Owner = "N/A";
+    }
+    public Deed (String name, boolean is_visiting_jail, boolean is_jail){
+        Name = name;
+        IsVisitingJail = is_visiting_jail;
+        IsJail = is_jail;
     }
     public Deed(){
         Name = "a";
