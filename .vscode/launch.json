@@ -4,7 +4,27 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "Launch LayeredPaneDemo",
+            "request": "launch",
+            "mainClass": "LayeredPaneDemo",
+            "projectName": "Monopoly_8a554619"
+        },
+        {
+            "type": "java",
+            "name": "Launch MultiPanelTest",
+            "request": "launch",
+            "mainClass": "MultiPanelTest",
+            "projectName": "Monopoly_8a554619"
+        },
+        {
+            "type": "java",
+            "name": "Launch MultiPanelTest",
+            "request": "launch",
+            "mainClass": "graphic_test.MultiPanelTest",
+            "projectName": "Monopoly_8a554619"
+        },
         {
             "type": "java",
             "name": "Launch Current File",

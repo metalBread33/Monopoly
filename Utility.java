@@ -1,9 +1,6 @@
-
-public class Utilities extends Deed {
+public class Utility extends Deed {
 //*****************************************************************************
-
-
-    Utilities (String name, int cost, int mort, int rent)
+    Utility (String name, int cost, int mort, int rent)
     {
         super(name, cost, mort, rent);
 

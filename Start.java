@@ -2,11 +2,91 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.Reader;
 import java.util.Arrays;
+import java.awt.*;
 
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.LayoutStyle;
+import javax.swing.SwingConstants;
 import javax.swing.text.LabelView;
 
 public class Start {
     public static void main(String args[]){
+        //Player positions
+        Coord[] player1_coords = new Coord[41];
+        Coord[] player2_coords = new Coord[41];
+        Coord[] player3_coords = new Coord[41];
+        Coord[] player4_coords = new Coord[41];
+
+        int x=24;
+        int y=30;
+
+        //Row 1
+        for(int i=1; i<11; i++)
+            player1_coords[i] = new Coord(520 - (x+45*i+5), y+10+450);
+        for(int i=1; i<11; i++)
+            player2_coords[i] = new Coord(520 - (x+45*i+5), y+450+15+10);
+        for(int i=1; i<11; i++)
+            player3_coords[i] = new Coord(520 - (x+45*i+15+5), y+450+10);
+        for(int i=1; i<11; i++)
+            player4_coords[i] = new Coord(520 - (x+45*i+15+5), y+450+15+10);
+
+        //Row 2
+        for(int i=1; i<11; i++)
+            player1_coords[10 + i] = new Coord(x-5, 525 - (y+45*i));
+        for(int i=1; i<11; i++)
+            player2_coords[10 + i] = new Coord(x+10, 525 - (y+45*i));
+        for(int i=1; i<11; i++)
+            player3_coords[10 + i] = new Coord(x-5, 525 - (y+45*i+15));
+        for(int i=1; i<11; i++)
+            player4_coords[10 + i] = new Coord(x+10, 525 - (y+45*i+15));
+
+        //Row 3
+        for(int i=1; i<11; i++)
+            player1_coords[20 + i] = new Coord(x+45*i, y);
+        for(int i=1; i<11; i++)
+            player2_coords[20 + i] = new Coord(x+45*i+15, y);
+        for(int i=1; i<11; i++)
+            player3_coords[20 + i] = new Coord(x+45*i, y+15);
+        for(int i=1; i<11; i++)
+            player4_coords[20 + i] = new Coord(x+45*i+15, y+15);
+
+        //Row 4
+        for(int i=1; i<11; i++)
+            player1_coords[30 + i] = new Coord(x+455, y+45*i);
+        for(int i=1; i<11; i++)
+            player2_coords[30 + i] = new Coord(x+455+15, y+45*i);
+        for(int i=1; i<11; i++)
+            player3_coords[30 + i] = new Coord(x+455, y+45*i+15);
+        for(int i=1; i<11; i++)
+            player4_coords[30 + i] = new Coord(x+455+15, y+45*i+15);
+
+        Board board = new Board();
+        DrawTriangles triangles = new DrawTriangles();
+        triangles.setOpaque(true);
+        JFrame frame = new JFrame("Start");
+        triangles.SetOriginFrame(frame);
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(800,800);
+        //Container content_pane = frame.getContentPane();
+        //frame.add(board);
+        var label = new JLabel("Main Panel", SwingConstants.CENTER);
+        label.setBackground(new Color(255,0,0));
+        //frame.add(label);
+        //frame.add(triangles);
+        LayeredPane layeredPane = new LayeredPane(
+            player1_coords, 
+            player2_coords, 
+            player3_coords, 
+            player4_coords);
+        layeredPane.setOpaque(true);
+        layeredPane.SetOriginFrame(frame);
+        frame.setContentPane(layeredPane);
+        //frame.pack();
+        frame.setVisible(true);
         BufferedReader input;
         try{
             input = new BufferedReader(new FileReader("Info.txt"));
@@ -39,6 +119,12 @@ public class Start {
             }
             else if(i == 30){
                 lands[i].SetDeed(new Deed("Go To Jail", false, true));
+            }
+            else if(i == 12){
+                lands[i].SetDeed(new Utility("Electric Company", 150, 75, 0));
+            }
+            else if(i == 28){
+                lands[i].SetDeed(new Utility("Water Works", 150, 75, 0));
             }
             else if(Arrays.asList(property_nums).contains(i)){
                 try{
